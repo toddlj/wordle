@@ -20,4 +20,6 @@ class Guess:
         if (guess not in guesslist):
             raise Exception("guess not in guess list")
 
-        return Guess(guess, [])
+        matches = [Guess.Match.NONE]*5
+
+        return Guess(guess, matches)

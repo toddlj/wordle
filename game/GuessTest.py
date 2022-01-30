@@ -5,8 +5,8 @@ from game.Guess import Guess
 
 class GuessTest(unittest.TestCase):
     def testEvaluatesNoMatch(self):
-        guess = "hello"
-        target = "gains"
+        guess = "gains"
+        target = "hello"
         matches = [Guess.Match.NONE,
                    Guess.Match.NONE,
                    Guess.Match.NONE,

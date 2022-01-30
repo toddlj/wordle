@@ -1,5 +1,7 @@
 from enum import Enum
 
+from lib.words import targetlist, guesslist
+
 
 class Guess:
     class Match(Enum):
@@ -10,3 +12,12 @@ class Guess:
     def __init__(self, word: str, matches: [Match]):
         self.word = word
         self.matches = matches
+
+    @staticmethod
+    def evaluate_guess(guess: str, target: str):
+        if (target not in targetlist):
+            raise Exception("target not in target list")
+        if (guess not in guesslist):
+            raise Exception("guess not in guess list")
+
+        return Guess(guess, [])

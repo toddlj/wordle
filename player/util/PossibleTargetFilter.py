@@ -1,5 +1,3 @@
-from collections import Counter
-
 from game.Guess import Guess
 from lib.words import targetlist
 
@@ -7,11 +5,16 @@ from lib.words import targetlist
 class PossibleTargetFilter:
     def __init__(self):
         self.possible_targets: {""} = targetlist
+        self.history: {Guess} = {}
 
     def apply(self, history: [Guess]) -> None:
-        self.filter_known_letters_without_counts(history)
-        self.filter_known_letter_places(history)
-        self.filter_guess_outcomes(history)
+        new_words = list(set(history).difference(self.history))
+
+        self.filter_known_letters_without_counts(new_words)
+        self.filter_known_letter_places(new_words)
+        self.filter_guess_outcomes(new_words)
+
+        self.history = history
 
     def filter_known_letters_without_counts(self, history: [Guess]):
         known_letters = set()

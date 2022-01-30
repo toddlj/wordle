@@ -9,6 +9,8 @@ class Guess:
         LETTER = 1
         NONE = 2
 
+    FULL_MATCH = [Match.LETTER_PLACE]*5
+
     def __init__(self, word: str, matches: [Match]):
         self.word = word
         self.matches = matches

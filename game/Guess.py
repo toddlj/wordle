@@ -17,7 +17,7 @@ class Guess:
     def evaluate_guess(guess: str, target: str):
         if (target not in targetlist):
             raise Exception("target not in target list")
-        if (guess not in guesslist):
+        if (guess not in guesslist and guess not in targetlist):
             raise Exception("guess not in guess list")
 
         matches = [Guess.Match.NONE]*5

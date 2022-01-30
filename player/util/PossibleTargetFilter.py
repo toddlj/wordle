@@ -5,16 +5,13 @@ from lib.words import targetlist
 class PossibleTargetFilter:
     def __init__(self):
         self.possible_targets: {""} = targetlist
-        self.history: {Guess} = {}
 
     def apply(self, history: [Guess]) -> None:
-        new_words = list(set(history).difference(self.history))
+        new_words = [history[-1]] if len(history) > 0 else []
 
         self.filter_known_letters_without_counts(new_words)
         self.filter_known_letter_places(new_words)
         self.filter_guess_outcomes(new_words)
-
-        self.history = history
 
     def filter_known_letters_without_counts(self, history: [Guess]):
         known_letters = set()

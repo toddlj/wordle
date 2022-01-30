@@ -1,10 +1,9 @@
 import random
+import timeit
 
-from game.Game import Game
 from game.Guess import Guess
 from game.Player import Player
 from game.PlayerEvaluator import PlayerEvaluator
-from lib.words import targetlist
 from player.util.PossibleTargetFilter import PossibleTargetFilter
 
 
@@ -15,4 +14,6 @@ class RandomGuesserWithFilter(Player):
 
 
 if __name__ == '__main__':
+    start_time = timeit.default_timer()
     print(PlayerEvaluator.evaluatePlayer(RandomGuesserWithFilter()))
+    print(f"In {timeit.default_timer() - start_time} seconds")

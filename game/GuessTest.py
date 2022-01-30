@@ -42,8 +42,8 @@ class GuessTest(unittest.TestCase):
         target = "world"
         matches = [Guess.Match.NONE,
                    Guess.Match.NONE,
-                   Guess.Match.LETTER,
                    Guess.Match.NONE,
+                   Guess.Match.LETTER_PLACE,
                    Guess.Match.LETTER]
 
         self.assertEqual(Guess.evaluate_guess(guess, target).matches, matches)
@@ -54,7 +54,7 @@ class GuessTest(unittest.TestCase):
         matches = [Guess.Match.NONE,
                    Guess.Match.LETTER,
                    Guess.Match.NONE,
-                   Guess.Match.LETTER,
+                   Guess.Match.LETTER_PLACE,
                    Guess.Match.NONE]
 
         self.assertEqual(Guess.evaluate_guess(guess, target).matches, matches)

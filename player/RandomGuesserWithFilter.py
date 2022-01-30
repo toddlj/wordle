@@ -15,5 +15,5 @@ class RandomGuesserWithFilter(Player):
 
 if __name__ == '__main__':
     start_time = timeit.default_timer()
-    print(PlayerEvaluator.evaluatePlayer(RandomGuesserWithFilter()))
+    print(PlayerEvaluator.evaluate_player(RandomGuesserWithFilter))
     print(f"In {timeit.default_timer() - start_time} seconds")

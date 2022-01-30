@@ -13,4 +13,4 @@ class RandomGuesser(Player):
 
 
 if __name__ == '__main__':
-    print(PlayerEvaluator.evaluatePlayer(RandomGuesser()))
+    print(PlayerEvaluator.evaluate_player(RandomGuesser))

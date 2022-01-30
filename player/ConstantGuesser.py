@@ -12,4 +12,4 @@ class ConstantGuesser(Player):
 
 
 if __name__ == '__main__':
-    print(PlayerEvaluator.evaluatePlayer(ConstantGuesser()))
+    print(PlayerEvaluator.evaluate_player(ConstantGuesser))

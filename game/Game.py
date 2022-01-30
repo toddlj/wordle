@@ -7,7 +7,7 @@ class Game:
         self.target = target
         self.player = player
         self.history = self.run_game()
-        self.victory = Guess.FULL_MATCH in self.history
+        self.victory = Guess.FULL_MATCH in list(map(lambda guess: guess.matches, self.history))
 
     def run_game(self, rounds=5) -> [Guess]:
         history = []

@@ -21,7 +21,7 @@ class PlayerEvaluator:
     def results(self) -> str:
         if not self.evaluated:
             raise Exception("Results not ready")
-        return f"Victories={len(self.victories)}, Losses={len(self.losses)}, Percentage won: {len(self.victories) / (len(self.losses) + len(self.victories)) * 100} %"
+        return f"Player={type(self.player)}, Victories={len(self.victories)}, Losses={len(self.losses)}, Percentage won: {len(self.victories) / (len(self.losses) + len(self.victories)) * 100} %"
 
     @staticmethod
     def evaluatePlayer(player: Player) -> str:

@@ -10,7 +10,9 @@ from player.util.PossibleTargetFilter import PossibleTargetFilter
 class RandomGuesserWithFilter(Player):
 
     def next_guess(self, history: [Guess]) -> str:
-        return random.choice(list(PossibleTargetFilter().apply(history)))
+        possible_target_filter = PossibleTargetFilter()
+        possible_target_filter.apply(history)
+        return random.choice(list(possible_target_filter.possible_targets))
 
 
 if __name__ == '__main__':

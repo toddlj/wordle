@@ -15,7 +15,6 @@ class GuessTest(unittest.TestCase):
 
         self.assertEqual(Guess.evaluate_guess(guess, target).matches, matches)
 
-
     def testEvaluatesFullMatch(self):
         guess = "hello"
         target = "hello"
@@ -24,6 +23,17 @@ class GuessTest(unittest.TestCase):
                    Guess.Match.LETTER_PLACE,
                    Guess.Match.LETTER_PLACE,
                    Guess.Match.LETTER_PLACE]
+
+        self.assertEqual(Guess.evaluate_guess(guess, target).matches, matches)
+
+    def testEvaluatesPartialFullMatch(self):
+        guess = "helps"
+        target = "hello"
+        matches = [Guess.Match.LETTER_PLACE,
+                   Guess.Match.LETTER_PLACE,
+                   Guess.Match.LETTER_PLACE,
+                   Guess.Match.NONE,
+                   Guess.Match.NONE]
 
         self.assertEqual(Guess.evaluate_guess(guess, target).matches, matches)
 

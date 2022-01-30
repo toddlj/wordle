@@ -8,11 +8,10 @@ class PossibleTargetFilter:
     def __init__(self):
         self.possible_targets = targetlist
 
-    def apply(self, history: [Guess]) -> {""}:
+    def apply(self, history: [Guess]):
         self.filter_known_letters_without_counts(history)
         self.filter_known_letter_places(history)
         self.filter_guess_outcomes(history)
-        return self.possible_targets
 
     def filter_known_letters_without_counts(self, history: [Guess]):
         known_letters = set()

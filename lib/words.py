@@ -2315,7 +2315,7 @@ targetlist = {
     "rural",
     "shave",
 }
-guesslist = {
+guesslist = targetlist.union({
     "aahed",
     "aalii",
     "aargh",
@@ -12973,4 +12973,4 @@ guesslist = {
     "zygon",
     "zymes",
     "zymic",
-}
+})
